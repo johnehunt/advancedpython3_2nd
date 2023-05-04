@@ -1,4 +1,5 @@
 class Trade:
+    """Class for representing Equity Trades"""
 
     def __init__(self, counter_party1, counter_party2, symbol, amount):
         self.counter_party1 = counter_party1
