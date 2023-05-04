@@ -1,7 +1,7 @@
 class Trade:
     """Class for representing Equity Trades"""
 
-    def __init__(self, counter_party1, counter_party2, symbol, amount):
+    def __init__(self, counter_party1, counter_party2, symbol, amount=0):
         self.counter_party1 = counter_party1
         self.counter_party2 = counter_party2
         self.symbol = symbol
@@ -20,6 +20,7 @@ class Trade:
             self.counter_party2 == other.counter_party2 and \
             self.symbol == other.symbol and \
             self.amount == other.amount
+
 
 trade1 = Trade('John', 'Denise', 'IBM', 100)
 print(trade1)
