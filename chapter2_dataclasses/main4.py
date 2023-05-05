@@ -6,7 +6,7 @@ class StockExchange:
         self.name = name
 
     def __repr__(self):
-        return f'(StockExchange({self.name})'
+        return f'StockExchange({self.name})'
 
 def make_stock_exchange():
     return StockExchange('London Stock Exchange')
