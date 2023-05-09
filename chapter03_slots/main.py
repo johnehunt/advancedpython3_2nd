@@ -1,19 +1,20 @@
-class Play:
-    __slots__ = ['title', 'author', 'year']
+import sys
+class Person:
+    __slots__ = ['name', 'age']
 
-    def __init__(self, title, author, year):
-        self.title = title
-        self.author = author
-        self.year = year
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        # self.address = None
 
     def __repr__(self):
-        return f'Play("{self.title}", by {self.author} in {self.year})'
+        return f'Person({self.name} is {self.age})'
 
 
-play = Play('Alls Well That Ends Well',
-            'William Shakespeare',
-            '1598')
-print(play)
+p1 = Person('Phoebe', 25)
+print(p1)
+print(f'p1: {p1.name} {p1.age}')
 
-# play.publisher = 'First Folio Team'
+# p1.address = '10 High Street'
 
+print(f'sys.getsizeof(p1) slots - {sys.getsizeof(p1)}')
