@@ -21,6 +21,8 @@ if __name__ == '__main__':
 
     print('Add a weakref reference')
     weakref_data = weakref.ref(data)
+    print(weakref_data)
+    print(weakref_data())
 
     print('Find the reference count of data now')
     ref_count = ctypes.c_long.from_address(data_id).value
@@ -29,4 +31,18 @@ if __name__ == '__main__':
     print('Find the weak ref count')
     weak_ref_count = weakref.getweakrefcount(data)
     print(f"Number of weak references: {weak_ref_count}")
+
+    print('Set data to None')
+    data = None
+    print('Find the reference count of data now')
+    ref_count = ctypes.c_long.from_address(data_id).value
+    print(f"Reference count for data is now: {ref_count}")
+
+    print('Find the weak ref count')
+    weak_ref_count = weakref.getweakrefcount(data)
+    print(f"Number of weak references: {weak_ref_count}")
+
+    print(weakref_data)
+
+
 

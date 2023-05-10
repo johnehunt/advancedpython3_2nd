@@ -15,3 +15,8 @@ if __name__ == '__main__':
     print(f'Weak reference count is: {weakref.getweakrefcount(weak_dict)}')
     print(f'weak_dict: {weak_dict}')
     print(f"weak_dict['info']: {weak_dict['info']}")
+
+
+    data = None
+    if 'info' in weak_dict.keys():
+        print(f"weak_dict['info']: {weak_dict['info']}")
