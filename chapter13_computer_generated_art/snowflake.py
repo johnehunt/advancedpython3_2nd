@@ -7,7 +7,7 @@ SIZE_OF_SNOWFLAKE = 300
 
 def get_input_depth():
     """ Obtain input from user and convert to an int"""
-    message = 'Please provide the depth (0 or a positive interger):'
+    message = 'Please provide the depth (0 or a positive integer):'
     value_as_string = input(message)
     while not value_as_string.isnumeric():
         print('The input must be an integer!')
@@ -35,6 +35,7 @@ def draw_koch(size, depth):
     else:
         turtle.forward(size)
 
+
 depth = get_input_depth()
 
 setup_screen('Koch Snowflake (depth ' + str(depth) + ')',
@@ -45,7 +46,7 @@ turtle.color('sky blue')
 
 # Ensure snowflake is centred
 turtle.penup()
-turtle.setposition(-180,0)
+turtle.setposition(-180, 0)
 turtle.left(30)
 turtle.pendown()
 
