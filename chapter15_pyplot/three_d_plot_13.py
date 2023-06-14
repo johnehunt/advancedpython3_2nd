@@ -12,8 +12,8 @@ y_values = np.arange(-6, 6, 0.3)
 x_values, y_values = np.meshgrid(x_values, y_values)
 # Generate Z values as sin of x plus y values
 z_values = np.sin(x_values + y_values)
-# Obtain the figure object and get the axes object for the 3D graph
 
+# Obtain the figure object and get the axes object for the 3D graph
 figure, axes = pyplot.subplots(subplot_kw={"projection": "3d"})
 
 # Plot the surface.
