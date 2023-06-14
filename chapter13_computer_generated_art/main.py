@@ -3,11 +3,13 @@ import turtle
 WIDTH = 640
 HEIGHT = 360
 
+
 def setup_window():
     # Set up the window
     turtle.title('Circles in My Mind')
     turtle.setup(WIDTH, HEIGHT, 0, 0)
-    turtle.colormode(255)  # Indicates RGB numbers will be in the range 0 to 255
+    # Indicates RGB numbers will be in the range 0 to 255
+    turtle.colormode(255)
     turtle.hideturtle()
     # Batch drawing to the screen for faster rendering
     turtle.tracer(2000)
@@ -15,6 +17,7 @@ def setup_window():
     # Speed up drawing process
     turtle.speed(10)
     turtle.penup()
+
 
 def draw_circle(x, y, radius, red=50, green=255, blue=10, width=7):
     """ Draw a circle at a specific x, y location.
@@ -47,6 +50,7 @@ def draw_circle(x, y, radius, red=50, green=255, blue=10, width=7):
     turtle.pendown()
     turtle.circle(radius)
     turtle.penup()
+
 
 # Run the program
 print('Starting')
