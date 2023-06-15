@@ -15,6 +15,7 @@ class PyDrawConstants:
 
     SIZE = 30
 
+
 class Figure:
     def __init__(self, canvas, x=0, y=0, size=None, fill='blue'):
         self.canvas = canvas
@@ -27,6 +28,7 @@ class Figure:
     def draw(self):
         pass
 
+
 class Square(Figure):
     def __init__(self, canvas, x, y, size):
         super().__init__(canvas=canvas, x=x, y=y, size=size)
@@ -38,16 +40,18 @@ class Square(Figure):
                                      self.y + self.size,
                                      fill=self.fill)
 
+
 class Circle(Figure):
     def __init__(self, canvas, x, y, size):
         super().__init__(canvas=canvas, x=x, y=y, size=size, fill='red')
 
     def draw(self):
         self.canvas.create_oval(self.x,
-                                     self.y,
-                                     self.x + self.size,
-                                     self.y + self.size,
-                                     fill=self.fill)
+                                self.y,
+                                self.x + self.size,
+                                self.y + self.size,
+                                fill=self.fill)
+
 
 class Line(Figure):
     def __init__(self, canvas, x, y, size):
@@ -58,6 +62,7 @@ class Line(Figure):
                                 self.y,
                                 self.x + self.size,
                                 self.y + self.size)
+
 
 class Text(Figure):
     def __init__(self, canvas, x, y, text_string='Text', font='Helvetica 15 bold', fill='black'):
@@ -84,6 +89,7 @@ class DrawingModel:
 
     def add_figure(self, figure):
         self.contents.append(figure)
+
 
 class DrawingController:
 
@@ -113,6 +119,7 @@ class DrawingController:
         self.model.clear_figures()
         self.view.delete('all')
 
+
 class DrawingView(tk.Canvas):
     def __init__(self, parent, get_mode,
                  width=PyDrawConstants.WIDTH,
@@ -127,6 +134,7 @@ class DrawingView(tk.Canvas):
     def draw_contents(self):
         for figure in self.model.contents:
             figure.draw()
+
 
 class PyDrawController:
 
@@ -160,10 +168,11 @@ class PyDrawController:
     def exit_app(self):
         self.root.quit()
 
+
 class PyDrawMenuBar(tk.Menu):
     def __init__(self, parent, controller):
         super().__init__(parent)
-        self.controller=controller
+        self.controller = controller
         self.create_file_menu()
         self.create_mode_menu()
 
@@ -175,7 +184,6 @@ class PyDrawMenuBar(tk.Menu):
         mode_menu.add_command(label=PyDrawConstants.TEXT_MODE, command=self.controller.set_text_mode)
         self.add_cascade(label='Mode', menu=mode_menu)
 
-
     def create_file_menu(self):
         file_menu = tk.Menu(self, tearoff=0)
         file_menu.add_command(label='New', command=self.controller.new_canvas)
@@ -183,8 +191,10 @@ class PyDrawMenuBar(tk.Menu):
         self.add_cascade(label='File', menu=file_menu)
 
 
+class PyDrawView:
+    """ Main Frame responsible for the
+        layout of the UI."""
 
-class PyDraw:
     def __init__(self):
         self.root = tk.Tk()
 
@@ -204,10 +214,19 @@ class PyDraw:
 
         self.root.eval('tk::PlaceWindow . center')
 
+    def mainloop(self):
+        """Delegate method that passes responsibility onto the root"""
+        self.root.mainloop()
+
+
+class PyDraw:
+    def __init__(self):
+        self.view = PyDrawView()
+        self.view.mainloop()
+
 
 def main():
     app = PyDraw()
-    app.root.mainloop()
 
 
 if __name__ == '__main__':
