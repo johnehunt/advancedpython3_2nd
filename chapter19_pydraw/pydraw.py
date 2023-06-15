@@ -208,9 +208,9 @@ class PyDrawView:
         self.menubar = PyDrawMenuBar(self.root, self.controller)
         self.root.config(menu=self.menubar)
 
-        # Setup drawing panel
-        self.drawing_panel = DrawingView(self.root, self.controller.get_mode)
-        self.controller.view = self.drawing_panel
+        # Setup drawing view
+        self.drawing_view = DrawingView(self.root, self.controller.get_mode)
+        self.controller.view = self.drawing_view
 
         self.root.eval('tk::PlaceWindow . center')
 
@@ -226,7 +226,7 @@ class PyDraw:
 
 
 def main():
-    app = PyDraw()
+    PyDraw()
 
 
 if __name__ == '__main__':
