@@ -9,7 +9,7 @@ def button_click():
 # Set up the window and the button within the window
 window = tk.Tk()
 
-# Set teh size of the window
+# Set the size of the window
 window.geometry("200x80")
 
 # Set the title of the tkinter window
