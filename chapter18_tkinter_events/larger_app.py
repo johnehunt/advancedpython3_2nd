@@ -1,14 +1,18 @@
 import tkinter as tk
 import tkinter.simpledialog as simpledialog
 
+
 def key_press(event):
     print("Key pressed:", event.char)
+
 
 def focus_lost(event):
     print(f'Widget {event.widget} lost focus')
 
+
 def focus_gained(event):
     print(f'Widget {event.widget} gained focus')
+
 
 # Create main window
 window = tk.Tk()
@@ -22,16 +26,17 @@ frame = tk.Frame(window)
 frame.pack()
 
 label = tk.Label(frame, text='User Name')
-label.pack( side = tk.LEFT)
+label.pack(side=tk.LEFT)
 
 # Set up a 'ext variable' to use with the entry field
 # Makes setting it programmatically easier (don't need to delete and insert)
 entry_text = tk.StringVar()
-entry = tk.Entry(frame, textvariable=entry_text, bd =5)
-entry.pack(side = tk.RIGHT)
+entry = tk.Entry(frame, textvariable=entry_text, bd=5)
+entry.pack(side=tk.RIGHT)
 entry.bind('<FocusIn>', focus_gained)
 entry.bind('<FocusOut>', focus_lost)
 entry.bind('<Key>', key_press)
+
 
 def button_click(event):
     answer = simpledialog.askstring("Name Entry", "Please enter your name:")
@@ -40,6 +45,7 @@ def button_click(event):
         entry_text.set(answer)
     else:
         print("No input provided.")
+
 
 button = tk.Button(window, text='Show Message')
 button.pack()

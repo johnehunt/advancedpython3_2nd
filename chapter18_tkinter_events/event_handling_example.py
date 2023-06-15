@@ -1,12 +1,14 @@
 import tkinter as tk
 from datetime import datetime
 
+
 def button_click(event):
     print('Button clicked!')
     print(event)
     print(f'Event type: {event.type}')
     print(f'Widget: {event.widget}')
     print(f'Time: {datetime.fromtimestamp(event.time / 1e3)}')
+
 
 # Create main window
 window = tk.Tk()
