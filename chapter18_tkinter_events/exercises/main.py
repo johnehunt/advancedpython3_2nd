@@ -1,5 +1,4 @@
 import tkinter as tk
-import tkinter.simpledialog as simpledialog
 from tkinter import messagebox
 
 def enter_button_click(event):
