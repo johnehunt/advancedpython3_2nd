@@ -3,9 +3,9 @@
 import logging
 
 # Several different formatting options - try uncommenting different ones
-# logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG)
 # logging.basicConfig(format='%(asctime)s[%(levelname)s] %(funcName)s: %(message)s', level=logging.DEBUG)
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.DEBUG)
+# logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.DEBUG)
 
 logger = logging.getLogger(__name__)
 
