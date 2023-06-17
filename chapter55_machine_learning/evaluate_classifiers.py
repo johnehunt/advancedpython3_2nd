@@ -9,7 +9,7 @@ from sklearn.tree import DecisionTreeRegressor
 
 DATA_SET = 'merged_covid_data.csv'
 TARGET_VARIABLE = 'retail_and_recreation_change'
-FEATURES_SET = {'hospitalCases', 'newAdmissions', 'newCasesByPublishDate'}
+FEATURES_LIST = ['hospitalCases', 'newAdmissions', 'newCasesByPublishDate']
 
 
 def run_model(label,
@@ -85,10 +85,10 @@ train, test = train_test_split(df, test_size=0.2)
 print(f'Size of training data {len(train)}')
 print(f'Size of testing data {len(test)}')
 
-training_features = train[FEATURES_SET].values
+training_features = train[FEATURES_LIST].values
 training_target = train[TARGET_VARIABLE].values
 
-test_features = test[FEATURES_SET].values
+test_features = test[FEATURES_LIST].values
 test_target = test[TARGET_VARIABLE].values
 
 print('-' * 25)

@@ -39,7 +39,7 @@ df1['newAdmissions'] = df1['newAdmissions'].fillna(0)
 
 print(f'Loading - {MOBILITY_CHANGE}')
 
-# Load the google Mobility data for the UK
+# Load the Google Mobility data for the UK
 df2 = pd.read_csv(MOBILITY_CHANGE, low_memory=False)
 
 # Drop columns that don't provide any additional data
