@@ -50,7 +50,7 @@ class Bookshop:
 bookshop = Bookshop([Book(1, 'XML', 'Gryff Smith', 10.99),
                      Book(2, 'Java', 'Phoebe Cooke', 12.99),
                      Book(3, 'Scala', 'Adam Davies', 11.99),
-                     Book(4, 'Python', 'Jasmine Byrne', 15.99)])
+                     Book(4, 'Python', 'Natalia Nadal', 15.99)])
 
 def create_bookshop_service():
     app = Flask(__name__)
@@ -101,7 +101,7 @@ def create_bookshop_service():
 
     @app.errorhandler(400)
     def not_found(error):
-        return make_response(jsonify({'error': 'Book Not Found'}), 400)
+        return make_response(jsonify({'Error': 'Book Not Found'}), 400)
 
     return app
 
