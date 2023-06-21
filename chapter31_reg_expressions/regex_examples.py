@@ -6,8 +6,8 @@ print(s)
 s = r'Hello \n world'
 print(s)
 
-text1 = 'john williams'
-pattern = '[Jj]ohn'
+text1 = 'gryff williams'
+pattern = '[Gg]ryff'
 print('looking in', text1, 'for the pattern', pattern)
 if re.search(pattern, text1, re.MULTILINE):
     print('Match has been found')
@@ -60,8 +60,8 @@ if re.search(usesSh, line):
 else:
     print('Some other shell')
 
-name = 'John Smith'
-nameRe = r'john'
+name = 'Gryff Smith'
+nameRe = r'gryff'
 if re.search(nameRe, name, re.IGNORECASE):
     print('Match')
 
