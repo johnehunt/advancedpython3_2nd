@@ -7,11 +7,15 @@ def main():
         fieldnames = ['first_name', 'last_name', 'result']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerow({'first_name': 'John',
+        writer.writerow({'first_name': 'Denise',
                          'last_name': 'Smith',
                          'result' : 54})
-        writer.writerow({'first_name': 'Jane', 'last_name': 'Lewis', 'result' : 63})
-        writer.writerow({'first_name': 'Chris', 'last_name': 'Davies', 'result' : 72})
+        writer.writerow({'first_name': 'Natalia',
+                         'last_name': 'Lewis',
+                         'result' : 63})
+        writer.writerow({'first_name': 'Adam',
+                         'last_name': 'Davies',
+                         'result' : 72})
 
     print('Starting to read dict CSV example')
     with open('names.csv', newline='') as csvfile:
