@@ -9,11 +9,11 @@ def contains_only_characters_and_numbers(string):
     return not bool(re_pattern.search(string))
 
 
-print(contains_only_characters_and_numbers('John'))  # True
-print(contains_only_characters_and_numbers('!John_Hunt'))  # False
+print(contains_only_characters_and_numbers('Gryff'))  # True
+print(contains_only_characters_and_numbers('!Gryff_Hunt'))  # False
 print(contains_only_characters_and_numbers('42'))  # True
-print(contains_only_characters_and_numbers('John42'))  # True
-print(contains_only_characters_and_numbers('John 42'))  # False
+print(contains_only_characters_and_numbers('Gryff42'))  # True
+print(contains_only_characters_and_numbers('Gryff 42'))  # False
 
 
 # function to verify a UK postcode
@@ -36,7 +36,7 @@ def extract_values(start_char, end_char, string):
     return re.findall(start_char + r'(.*?)' + end_char, string)
 
 
-print(extract_values('<', '>', '<John>'))
+print(extract_values('<', '>', '<Gryff>'))
 print(extract_values('<', '>', '<42>'))
-print(extract_values('<', '>', '<John 42>'))
+print(extract_values('<', '>', '<Gryff 42>'))
 print(extract_values('<', '>', 'The <town> was in the <valley>'))
